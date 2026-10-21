@@ -141,6 +141,22 @@
       </div>
 
       <div class="card opt">
+        <div class="trow"><span class="time soft">אופציה</span><span class="name">🌮 Comal - ברקלי</span><span class="badge b-opt">על הדרך</span></div>
+        <div class="sub">מקסיקני מודרני במרכז ברקלי - מישלן Bib Gourmand</div>
+        <div class="addr">2020 Shattuck Ave, Berkeley, CA 94704 · <a href="tel:+15109266300">(510) 926-6300</a></div>
+        <div class="notes">על כביש 80, כ-40 דקות מהשדה; סטייה של כ-5 דקות לדאונטאון. פתוח חמישי עד 22:00, דירוג 4.4. הארוחה הכי טובה על הציר. תחליטו בדרך.</div>
+        <a class="navbtn" href="maps://?daddr=2020%20Shattuck%20Ave%2C%20Berkeley%2C%20CA%2094704">🧭 ניווט ל-Comal</a>
+      </div>
+
+      <div class="card opt">
+        <div class="trow"><span class="time soft">אופציה</span><span class="name">🦀 Skates on the Bay - ברקלי</span><span class="badge b-opt">על הדרך</span></div>
+        <div class="sub">פירות ים על המים במרינת ברקלי - נוף למפרץ ולגשרים</div>
+        <div class="addr">100 Seawall Dr, Berkeley, CA 94710 · <a href="tel:+15105491900">(510) 549-1900</a></div>
+        <div class="notes">הסטייה הכי קטנה - ממש ביציאת University Ave מהכביש. אבל נסגר חמישי ב-21:00, אז רק אם יוצאים מהשדה בזמן. דירוג 4.4. תחליטו בדרך.</div>
+        <a class="navbtn" href="maps://?daddr=100%20Seawall%20Dr%2C%20Berkeley%2C%20CA%2094710">🧭 ניווט ל-Skates</a>
+      </div>
+
+      <div class="card opt">
         <div class="trow"><span class="time soft">אופציה</span><span class="name">🦞 Red Lobster - ואייחו</span><span class="badge b-opt">על הדרך</span></div>
         <div class="sub">מסעדת פירות ים בישיבה - כ-15 דקות לפני המלון</div>
         <div class="addr">1180 Admiral Callaghan Ln, Vallejo, CA 94591 · <a href="tel:+17076440167">(707) 644-0167</a></div>
@@ -452,7 +468,7 @@ document.querySelectorAll('[data-copy]').forEach(function(btn){
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 var DAYS = {
-  thu: { stops: [["שדה התעופה SFO",37.62131,-122.37896],["מלון Home2 Suites",38.18041,-122.25351]], opts: [["In-N-Out Burger - מילבריי",37.60073,-122.38245],["Red Lobster - ואייחו",38.13519,-122.21504],["Panda Express - אמריקן קניון",38.18086,-122.25399]] },
+  thu: { stops: [["שדה התעופה SFO",37.62131,-122.37896],["מלון Home2 Suites",38.18041,-122.25351]], opts: [["In-N-Out Burger - מילבריי",37.60073,-122.38245],["Comal - ברקלי",37.87162,-122.26849],["Skates on the Bay - ברקלי",37.86366,-122.31802],["Red Lobster - ואייחו",38.13519,-122.21504],["Panda Express - אמריקן קניון",38.18086,-122.25399]] },
   fri: { stops: [["מלון Home2 Suites",38.18041,-122.25351],["Domaine Carneros",38.24636,-122.35664],["Westwood Hills Park",38.30364,-122.32164],["Bistro Don Giovanni",38.34457,-122.32641],["מלון Home2 Suites",38.18041,-122.25351]], opts: [["di Rosa - אמנות וטבע",38.25815,-122.35308],["Oxbow Public Market",38.30152,-122.28159]] },
   sat: { stops: [["מלון Home2 Suites",38.18041,-122.25351],["Castello di Amorosa",38.55892,-122.54123],["Beringer",38.51017,-122.47991],["Bouchon Bakery",38.40241,-122.36179],["מלון Home2 Suites",38.18041,-122.25351],["Angèle",38.29664,-122.28326],["מלון Home2 Suites",38.18041,-122.25351]], opts: [["Oakville Grocery",38.43726,-122.40298]] },
   sun: { stops: [["מלון Home2 Suites",38.18041,-122.25351],["שדה התעופה SFO",37.62131,-122.37896]], opts: [["סאוסליטו",37.85686,-122.48011]] }
