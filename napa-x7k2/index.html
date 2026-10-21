@@ -42,6 +42,12 @@
   .drive { font-size: 12.5px; color: #8a7a70; text-align: center; margin: 2px 0 10px; }
   .navbtn { display: block; text-align: center; background: #722f37; color: #fff; text-decoration: none; font-weight: 700; font-size: 15px; padding: 11px; border-radius: 10px; margin-top: 9px; }
   .navbtn:active { background: #5e2129; }
+  .photo { width: 100%; height: 175px; object-fit: cover; border-radius: 10px; margin-bottom: 9px; display: block; }
+  .banner { width: 100%; height: 175px; object-fit: cover; border-radius: 14px; display: block; margin-bottom: 12px; }
+  .sub { font-size: 13.5px; color: #7a6a5c; margin-top: 2px; }
+  .daynav { display: flex; gap: 8px; justify-content: center; margin: 12px 0 2px; flex-wrap: wrap; }
+  .daynav a { background: rgba(255,255,255,.18); color: #fff; text-decoration: none; font-size: 13.5px; font-weight: 600; padding: 6px 13px; border-radius: 20px; border: 1px solid rgba(255,255,255,.45); }
+  #cd { margin-top: 9px; font-size: 14.5px; font-weight: 600; color: #ffe9a8; }
   footer { text-align: center; color: #a08b7d; font-size: 12.5px; padding: 8px 0 20px; }
   /* PIN gate */
   #gate { position: fixed; inset: 0; background: linear-gradient(160deg, #5e2129, #722f37 60%, #96613f); z-index: 50; display: flex; align-items: center; justify-content: center; padding: 20px; }
@@ -79,9 +85,12 @@
     <h1>טיול נאפה 🍷</h1>
     <div class="dates">חמישי 22.10 - ראשון 25.10.2026</div>
     <div class="crew">Assaf · Yamit · Ron · Avishai &nbsp;|&nbsp; שבת 24.10 - יום נישואין 💛</div>
+    <div id="cd"></div>
+    <div class="daynav"><a href="#thu">חמישי</a><a href="#fri">שישי</a><a href="#sat">שבת</a><a href="#sun">ראשון</a></div>
   </div>
 
   <div class="wrap">
+    <img class="banner" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Vineyards_in_Napa_Valley_7.jpg/1280px-Vineyards_in_Napa_Valley_7.jpg" alt="כרמים בעמק נאפה">
     <div class="openbox">
       <b>⚠️ שני דברים עדיין פתוחים:</b><br>
       1. מלון: עדכון אורחים 2 ← 4 (אישור 81309217)<br>
@@ -89,7 +98,7 @@
     </div>
 
     <!-- ===== Thursday ===== -->
-    <div class="day">
+    <div class="day" id="thu">
       <div class="day-head"><h2>יום חמישי 22.10</h2><span class="dsub">הגעה</span></div>
       <div class="wx" id="wx0"><span class="ic">⏳</span><div><div class="tp">טוען תחזית…</div><div class="tip">אמריקן קניון</div></div></div>
 
@@ -122,12 +131,16 @@
     </div>
 
     <!-- ===== Friday ===== -->
-    <div class="day">
+    <div class="day" id="fri">
       <div class="day-head"><h2>יום שישי 23.10</h2><span class="dsub">יקב, טיול, ארוחת ערב</span></div>
       <div class="wx" id="wx1"><span class="ic">⏳</span><div><div class="tp">טוען תחזית…</div><div class="tip">נאפה</div></div></div>
 
+      <div class="drive">↓ מהמלון: כ-20 דקות נסיעה (הערכה)</div>
+
       <div class="card">
+        <img class="photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/NorCal2018_-002_Wine_Country_Napa_Valley_Vineyard_-_Domaine_Carneros_-S0411044.jpg/1280px-NorCal2018_-002_Wine_Country_Napa_Valley_Vineyard_-_Domaine_Carneros_-S0411044.jpg" alt="Domaine Carneros">
         <div class="trow"><span class="time">12:00–13:30</span><span class="name">🍇 Domaine Carneros</span><span class="badge b-booked">BOOKED</span></div>
+        <div class="sub">טעימת יינות בשאטו המפורסם של קרנרוס</div>
         <div class="addr">1240 Duhig Road, Napa, CA 94559</div>
         <div class="notes">טעימת יין (הוזמן על ידי הקבוצה). כניסה 21+ בלבד.</div>
         <a class="navbtn" href="maps://?daddr=1240%20Duhig%20Road%2C%20Napa%2C%20CA%2094559">🧭 ניווט ליקב</a>
@@ -136,6 +149,7 @@
       <div class="drive">↓ נסיעה לפארק: כ-35 דקות (הערכה)</div>
 
       <div class="card">
+        <img class="photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Bothe-Napa_Valley_State_Park.jpg/1280px-Bothe-Napa_Valley_State_Park.jpg" alt="Bothe-Napa Valley State Park">
         <div class="trow"><span class="time">אחה"צ</span><span class="name">🌲 Bothe-Napa Valley State Park</span></div>
         <div class="addr">3801 St. Helena Highway, Calistoga, CA 94515</div>
         <div class="notes">טיול קל - Redwood Trail, כ-3 מייל הלוך-חזור, 1–1.5 שעות, מוצל. כניסה $10 לרכב. לשים לב לאלון ארסי בשולי השביל.</div>
@@ -145,7 +159,9 @@
       <div class="drive">↓ נסיעה למסעדה: כ-35 דקות (הערכה)</div>
 
       <div class="card">
+        <img class="photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Bistro_Don_Giovanni_-_April_2024_-_Sarah_Stierch_04.jpg/1280px-Bistro_Don_Giovanni_-_April_2024_-_Sarah_Stierch_04.jpg" alt="Bistro Don Giovanni">
         <div class="trow"><span class="time">20:00</span><span class="name">🍝 Bistro Don Giovanni</span><span class="badge b-booked">BOOKED</span></div>
+        <div class="sub">ביסטרו איטלקי אהוב בלב נאפה</div>
         <div class="addr">4110 Howard Lane, Napa, CA 94558 · <a href="tel:+17072243300">(707) 224-3300</a></div>
         <div class="notes">ארוחת ערב, 4 אנשים, ללא כרטיס. שולחן לשעתיים, כל הקבוצה נוכחת, 15 דקות חסד. חנייה מוגבלת מאוד - להגיע יחד. קוד לבוש: Casual.</div>
         <span class="conf">אישור 2110650363 <button data-copy="2110650363">העתק</button></span>
@@ -154,14 +170,16 @@
     </div>
 
     <!-- ===== Saturday ===== -->
-    <div class="day">
+    <div class="day" id="sat">
       <div class="day-head"><h2>יום שבת 24.10</h2><span class="dsub">יום נישואין 💛</span></div>
       <div class="wx" id="wx2"><span class="ic">⏳</span><div><div class="tp">טוען תחזית…</div><div class="tip">סנט הלנה</div></div></div>
 
       <div class="drive">יוצאים מהמלון ב-9:55 ↓ נסיעה לטירה: כ-50 דקות</div>
 
       <div class="card">
+        <img class="photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Castello_di_Amorosa.jpg/1280px-Castello_di_Amorosa.jpg" alt="Castello di Amorosa">
         <div class="trow"><span class="time">10:50–12:50</span><span class="name">🏰 Castello di Amorosa</span><span class="badge b-booked">BOOKED</span></div>
+        <div class="sub">טירת יין בסגנון טוסקני מהמאה ה-13</div>
         <div class="addr">4045 St. Helena Highway, Calistoga, CA 94515 · <a href="tel:+17079676272">(707) 967-6272</a></div>
         <div class="notes">סיור Diamond + טעימה, 4 אנשים. להגיע 15 דקות מוקדם, צ'ק-אין מעבר לגשר המתרומם. נעליים נוחות ושכבות (המרתפים קרים).</div>
         <span class="conf">הזמנה 1230209 <button data-copy="1230209">העתק</button></span>
@@ -172,7 +190,9 @@
       <div class="drive">↓ נסיעה: כ-15 דקות · כמעט אין זמן לצהריים - חטיף קל בדרך</div>
 
       <div class="card">
+        <img class="photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Rhine_House%2C_Beringer_Vineyards.jpg/1280px-Rhine_House%2C_Beringer_Vineyards.jpg" alt="Beringer Vineyards - Rhine House">
         <div class="trow"><span class="time">13:30–14:45</span><span class="name">🍷 Beringer Vineyards</span><span class="badge b-booked">BOOKED</span></div>
+        <div class="sub">מהיקבים הוותיקים בנאפה (מאז 1876) - סיור Estate בבית הריין</div>
         <div class="addr">2000 Main St, St. Helena, CA 94574 · <a href="tel:+17072575771">+1 707-257-5771</a></div>
         <div class="notes">סיור Estate + טעימה, 4 אנשים. צ'ק-אין ב-Welcome Center בחניון הראשי, להגיע 15 דקות מוקדם. חובה תעודה מזהה עם תמונה (רישיון או דרכון - לא צילום).</div>
         <span class="conf">אישור TOCK-R-UWPLULV9 <button data-copy="TOCK-R-UWPLULV9">העתק</button></span>
@@ -181,7 +201,9 @@
       </div>
 
       <div class="card opt">
+        <img class="photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Bouchon_Bakery_%282248726467%29.jpg/1280px-Bouchon_Bakery_%282248726467%29.jpg" alt="Bouchon Bakery">
         <div class="trow"><span class="time soft">~15:00</span><span class="name">🥐 Bouchon Bakery</span><span class="badge b-opt">אופציונלי</span></div>
+        <div class="sub">המאפייה הצרפתית של השף תומס קלר</div>
         <div class="addr">6528 Washington St, Yountville, CA 94599 · <a href="tel:+17079442253">(707) 944-2253</a></div>
         <div class="notes">עצירה בדרך חזרה למלון - מאפה או כריך קל לפני ארוחת הערב. פתוח שבת עד 18:00.</div>
         <a class="navbtn" href="maps://?daddr=6528%20Washington%20St%2C%20Yountville%2C%20CA%2094599">🧭 ניווט למאפייה</a>
@@ -196,7 +218,9 @@
       <div class="drive">↓ נסיעה למסעדה: כ-15 דקות</div>
 
       <div class="card anniv">
+        <img class="photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Ang%C3%A8le_Restaurant_%26_Bar_-_September_2023_-_Sarah_stierch.jpg/1280px-Ang%C3%A8le_Restaurant_%26_Bar_-_September_2023_-_Sarah_stierch.jpg" alt="Angèle Restaurant">
         <div class="trow"><span class="time">19:00</span><span class="name">💛 Angèle - ארוחת יום נישואין</span><span class="badge b-booked">BOOKED</span></div>
+        <div class="sub">ביסטרו צרפתי על גדת נהר נאפה</div>
         <div class="addr">540 Main St, Napa, CA 94559 · <a href="tel:+17072528115">+1 707-252-8115</a></div>
         <div class="notes">ארוחת ערב, 4 אנשים, ללא כרטיס. כל הקבוצה חייבת להיות נוכחת, השולחן נשמר 15 דקות, ארוחת ערב מלאה בלבד. קוד לבוש: Business Casual.</div>
         <span class="conf">אישור TOCK-R-EU5EHCPD <button data-copy="TOCK-R-EU5EHCPD">העתק</button></span>
@@ -205,7 +229,7 @@
     </div>
 
     <!-- ===== Sunday ===== -->
-    <div class="day">
+    <div class="day" id="sun">
       <div class="day-head"><h2>יום ראשון 25.10</h2><span class="dsub">בראנץ' וחזרה</span></div>
       <div class="wx" id="wx3"><span class="ic">⏳</span><div><div class="tp">טוען תחזית…</div><div class="tip">סנט הלנה</div></div></div>
 
@@ -216,6 +240,7 @@
 
       <div class="card">
         <div class="trow"><span class="time">~11:30</span><span class="name">🥞 The Charter Oak - בראנץ'</span><span class="badge b-open">טרם הוזמן</span></div>
+        <div class="sub">מסעדת השף כריסטופר קוסטוב - בישול על גריל עץ</div>
         <div class="addr">1050 Charter Oak Ave, St Helena, CA 94574 · <a href="tel:+17073026996">(707) 302-6996</a></div>
         <div class="notes">בראנץ' מוגש 11:00–14:30, כ-$25 לאדם. שולחן טרם הוזמן - יש זמינות ב-11:30, להזמין ב-Resy.</div>
         <a class="navbtn" href="maps://?daddr=1050%20Charter%20Oak%20Ave%2C%20St%20Helena%2C%20CA%2094574">🧭 ניווט למסעדה</a>
@@ -290,6 +315,18 @@ document.querySelectorAll('[data-copy]').forEach(function(btn){
   });
 });
 
+// ===== Countdown =====
+(function(){
+  var el = document.getElementById('cd');
+  if (!el) return;
+  var target = new Date('2026-10-22T17:35:00-07:00').getTime();
+  var diff = target - Date.now();
+  if (diff <= 0) { el.textContent = '🍷 הטיול התחיל!'; return; }
+  var days = Math.floor(diff / 86400000);
+  var hours = Math.floor((diff % 86400000) / 3600000);
+  el.textContent = '⏳ עוד ' + days + ' ימים ו-' + hours + ' שעות לטיסה';
+})();
+
 // ===== Live weather (Open-Meteo, no key) =====
 (function(){
   var url = 'https://api.open-meteo.com/v1/forecast?latitude=38.17,38.30,38.51,38.51&longitude=-122.25,-122.30,-122.47,-122.47&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode&temperature_unit=fahrenheit&timezone=America%2FLos_Angeles&start_date=2026-10-22&end_date=2026-10-25';
@@ -309,10 +346,10 @@ document.querySelectorAll('[data-copy]').forEach(function(btn){
   }
   function cOf(f){ return Math.round((f - 32) * 5 / 9); }
   function tip(mn, mx, rain){
-    if (rain !== null && rain >= 50) return 'צפוי גשם - לקחת מטרייה ושכבה חמה';
-    if (mn <= 50) return 'בוקר וערב קרירים - שכבה נוספת, צהריים נעימים';
+    if (rain !== null && rain >= 50) return 'צפוי גשם - מטרייה ושכבה חמה';
+    if (mn <= 57) return 'בוקר קריר - שכבה קלה מעל החולצה, צהריים נעימים';
     if (mx >= 82) return 'יום חם - בגדים קלילים ומים';
-    return 'מזג אוויר נעים - שכבה קלה לערב';
+    return 'שכבה קלה לערב';
   }
   fetch(url).then(function(r){ return r.json(); }).then(function(data){
     var list = Array.isArray(data) ? data : [data];
@@ -324,8 +361,9 @@ document.querySelectorAll('[data-copy]').forEach(function(btn){
       var mn = Math.round(d.temperature_2m_min[i]);
       var rain = (d.precipitation_probability_max && d.precipitation_probability_max[i] !== null) ? d.precipitation_probability_max[i] : null;
       var w = wmo(d.weathercode[i]);
-      el.innerHTML = '<span class="ic">' + w[0] + '</span><div><div class="tp">' + w[1] + ' · ' + mx + '°F (' + cOf(mx) + '°) / ' + mn + '°F (' + cOf(mn) + '°)</div>' +
-        '<div class="tip">' + places[i] + (rain !== null ? ' · סיכוי גשם ' + rain + '%' : '') + ' · ' + tip(mn, mx, rain) + '</div></div>';
+      el.innerHTML = '<span class="ic">' + w[0] + '</span><div><div class="tp">' + w[1] + ' · מזג אוויר · ' + places[i] + '</div>' +
+        '<div class="tip">מקס\' ' + mx + '°F (' + cOf(mx) + '°) · מינ\' ' + mn + '°F (' + cOf(mn) + '°)' + (rain !== null ? ' · סיכוי גשם ' + rain + '%' : '') + '</div>' +
+        '<div class="tip"><b>לבוש:</b> ' + tip(mn, mx, rain) + '</div></div>';
     }
   }).catch(function(){
     for (var i = 0; i < 4; i++) {
