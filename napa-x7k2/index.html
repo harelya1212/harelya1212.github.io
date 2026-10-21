@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>טיול נאפה - 22-25 באוקטובר 2026</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, "Segoe UI", Arial, sans-serif; background: #faf6ef; color: #2b2320; line-height: 1.5; }
@@ -44,6 +45,11 @@
   .navbtn:active { background: #5e2129; }
   .mapbtn { display: block; text-align: center; background: linear-gradient(120deg, #2b5ea7, #3a7bd5); color: #fff; text-decoration: none; font-weight: 700; font-size: 15.5px; padding: 12px; border-radius: 10px; margin-bottom: 12px; box-shadow: 0 2px 6px rgba(43,94,167,.35); }
   .mapbtn:active { background: #24518c; }
+  .mapshow { display: block; width: 100%; text-align: center; background: #fff; color: #2b5ea7; border: 2px solid #2b5ea7; font-weight: 700; font-size: 14.5px; padding: 10px; border-radius: 10px; margin: -4px 0 12px; cursor: pointer; font-family: inherit; }
+  .dmap { height: 300px; border-radius: 12px; margin-bottom: 8px; display: none; z-index: 1; }
+  .maplegend { display: none; font-size: 13px; color: #555; background: #fff; border: 1px solid #e3ddd2; border-radius: 10px; padding: 8px 12px; margin-bottom: 12px; line-height: 1.7; }
+  .pin { background: #2b5ea7; color: #fff; border-radius: 50%; width: 24px; height: 24px; line-height: 24px; text-align: center; font-weight: 700; font-size: 13px; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.4); }
+  .pino { background: #e8871e; color: #fff; border-radius: 50%; width: 24px; height: 24px; line-height: 22px; text-align: center; font-size: 14px; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.4); }
   .photo { width: 100%; height: 175px; object-fit: cover; border-radius: 10px; margin-bottom: 9px; display: block; }
   .banner { width: 100%; height: 175px; object-fit: cover; border-radius: 14px; display: block; margin-bottom: 12px; }
   .sub { font-size: 13.5px; color: #7a6a5c; margin-top: 2px; }
@@ -102,6 +108,9 @@
       <div class="day-head"><h2>יום חמישי 22.10</h2><span class="dsub">הגעה</span></div>
       <div class="wx" id="wx0"><span class="ic">⏳</span><div><div class="tp">טוען תחזית…</div><div class="tip">אמריקן קניון</div></div></div>
       <a class="mapbtn" href="https://maps.apple.com/?saddr=San+Francisco+International+Airport&daddr=3701+Main+Street,+American+Canyon,+CA">🗺️ מפת היום - כל המסלול: שדה התעופה ← מלון</a>
+      <button class="mapshow" data-day="thu">🗺️ הצג מפה עם הנקודות</button>
+      <div class="dmap" id="map-thu" dir="ltr"></div>
+      <div class="maplegend" id="leg-thu"></div>
 
       <div class="card">
         <div class="trow"><span class="time">17:35</span><span class="name">✈️ טיסה AA 2421</span><span class="badge b-booked">BOOKED</span></div>
@@ -136,6 +145,9 @@
       <div class="day-head"><h2>יום שישי 23.10</h2><span class="dsub">יקב, טיול, ארוחת ערב</span></div>
       <div class="wx" id="wx1"><span class="ic">⏳</span><div><div class="tp">טוען תחזית…</div><div class="tip">נאפה</div></div></div>
       <a class="mapbtn" href="https://maps.apple.com/?saddr=3701+Main+Street,+American+Canyon,+CA&daddr=1240+Duhig+Road,+Napa,+CA+to:+3107+Browns+Valley+Rd,+Napa,+CA+to:+4110+Howard+Lane,+Napa,+CA+to:+3701+Main+Street,+American+Canyon,+CA">🗺️ מפת היום - כל המסלול: מלון ← קרנרוס ← פארק ← ביסטרו ← מלון</a>
+      <button class="mapshow" data-day="fri">🗺️ הצג מפה עם האופציות - מרחק מהמסלול</button>
+      <div class="dmap" id="map-fri" dir="ltr"></div>
+      <div class="maplegend" id="leg-fri"></div>
 
       <div class="drive">↓ מהמלון: כ-20 דקות נסיעה (הערכה)</div>
 
@@ -192,6 +204,9 @@
       <div class="day-head"><h2>יום שבת 24.10</h2><span class="dsub">יום נישואין 💛</span></div>
       <div class="wx" id="wx2"><span class="ic">⏳</span><div><div class="tp">טוען תחזית…</div><div class="tip">סנט הלנה</div></div></div>
       <a class="mapbtn" href="https://maps.apple.com/?saddr=3701+Main+Street,+American+Canyon,+CA&daddr=4045+St.+Helena+Highway,+Calistoga,+CA+to:+2000+Main+St,+St.+Helena,+CA+to:+6528+Washington+St,+Yountville,+CA+to:+3701+Main+Street,+American+Canyon,+CA+to:+540+Main+St,+Napa,+CA+to:+3701+Main+Street,+American+Canyon,+CA">🗺️ מפת היום - כל המסלול: מלון ← טירה ← ברינג'ר ← בושון ← מלון ← אנז'ל ← מלון</a>
+      <button class="mapshow" data-day="sat">🗺️ הצג מפה עם האופציות - מרחק מהמסלול</button>
+      <div class="dmap" id="map-sat" dir="ltr"></div>
+      <div class="maplegend" id="leg-sat"></div>
 
       <div class="drive">יוצאים מהמלון ב-9:55 ↓ נסיעה לטירה: כ-50 דקות</div>
 
@@ -260,6 +275,9 @@
       <div class="day-head"><h2>יום ראשון 25.10</h2><span class="dsub">בראנץ' וחזרה</span></div>
       <div class="wx" id="wx3"><span class="ic">⏳</span><div><div class="tp">טוען תחזית…</div><div class="tip">סנט הלנה</div></div></div>
       <a class="mapbtn" href="https://maps.apple.com/?saddr=3701+Main+Street,+American+Canyon,+CA&daddr=San+Francisco+International+Airport">🗺️ מפת היום - כל המסלול: מלון ← שדה התעופה</a>
+      <button class="mapshow" data-day="sun">🗺️ הצג מפה עם האופציות - מרחק מהמסלול</button>
+      <div class="dmap" id="map-sun" dir="ltr"></div>
+      <div class="maplegend" id="leg-sun"></div>
 
       <div class="card">
         <div class="trow"><span class="time soft">עד 11:00</span><span class="name">🧳 צ'ק-אאוט מהמלון</span></div>
@@ -405,6 +423,55 @@ document.querySelectorAll('[data-copy]').forEach(function(btn){
     }
   });
 })();
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+var DAYS = {
+  thu: { stops: [["שדה התעופה SFO",37.62131,-122.37896],["מלון Home2 Suites",38.18041,-122.25351]], opts: [] },
+  fri: { stops: [["מלון Home2 Suites",38.18041,-122.25351],["Domaine Carneros",38.24636,-122.35664],["Westwood Hills Park",38.30364,-122.32164],["Bistro Don Giovanni",38.34457,-122.32641],["מלון Home2 Suites",38.18041,-122.25351]], opts: [["di Rosa - אמנות וטבע",38.25815,-122.35308],["Oxbow Public Market",38.30152,-122.28159]] },
+  sat: { stops: [["מלון Home2 Suites",38.18041,-122.25351],["Castello di Amorosa",38.55892,-122.54123],["Beringer",38.51017,-122.47991],["Bouchon Bakery",38.40241,-122.36179],["מלון Home2 Suites",38.18041,-122.25351],["Angèle",38.29664,-122.28326],["מלון Home2 Suites",38.18041,-122.25351]], opts: [["Oakville Grocery",38.43726,-122.40298]] },
+  sun: { stops: [["מלון Home2 Suites",38.18041,-122.25351],["שדה התעופה SFO",37.62131,-122.37896]], opts: [["סאוסליטו",37.85686,-122.48011]] }
+};
+var mapsDone = {};
+function segDist(p, a, b){ var kx = 111.32 * Math.cos(p[0] * Math.PI / 180), ky = 110.57; var px = p[1] * kx, py = p[0] * ky, ax = a[1] * kx, ay = a[0] * ky, bx = b[1] * kx, by = b[0] * ky; var dx = bx - ax, dy = by - ay; var L2 = dx * dx + dy * dy; var t = L2 ? ((px - ax) * dx + (py - ay) * dy) / L2 : 0; t = Math.max(0, Math.min(1, t)); var cx = ax + t * dx, cy = ay + t * dy; return Math.sqrt((px - cx) * (px - cx) + (py - cy) * (py - cy)); }
+function distToLine(p, line){ var m = 1e9; for (var i = 0; i < line.length - 1; i++){ var d = segDist(p, line[i], line[i + 1]); if (d < m) m = d; } return m; }
+function fmtD(km){ if (km < 0.15) return "ממש על המסלול"; if (km < 1) return "כ-" + Math.max(50, Math.round(km * 20) * 50) + " מ' מהמסלול"; return "כ-" + km.toFixed(1) + " ק\"מ מהמסלול"; }
+function initDay(day){
+  var d = DAYS[day]; if (!d || mapsDone[day]) return; mapsDone[day] = true;
+  var el = document.getElementById('map-' + day);
+  if (typeof L === 'undefined'){ el.innerHTML = '<div style="padding:16px;font-size:14px;">המפה לא נטענה - בדקו חיבור לאינטרנט</div>'; return; }
+  var map = L.map(el); window['_m_' + day] = map;
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '© OpenStreetMap' }).addTo(map);
+  var all = [];
+  d.stops.forEach(function(s, i){ all.push([s[1], s[2]]); L.marker([s[1], s[2]], { icon: L.divIcon({ className: '', html: '<div class="pin">' + (i + 1) + '</div>', iconSize: [24, 24], iconAnchor: [12, 12] }) }).addTo(map).bindPopup('<b>' + (i + 1) + '. ' + s[0] + '</b>'); });
+  d.opts.forEach(function(o){ all.push([o[1], o[2]]); });
+  map.fitBounds(all, { padding: [24, 24] });
+  var straight = d.stops.map(function(s){ return [s[1], s[2]]; });
+  function draw(line){
+    L.polyline(line, { color: '#7b2230', weight: 4, opacity: .85 }).addTo(map);
+    var leg = document.getElementById('leg-' + day);
+    var h = '<b>תחנות המסלול:</b> ' + d.stops.map(function(s, i){ return (i + 1) + '. ' + s[0]; }).join(' · ');
+    if (d.opts.length){
+      h += '<br><b>אופציות (לא חלק מהמסלול):</b> ' + d.opts.map(function(o){ return '★ ' + o[0] + ' - ' + fmtD(distToLine([o[1], o[2]], line)); }).join(' · ');
+      d.opts.forEach(function(o){ var km = distToLine([o[1], o[2]], line); L.marker([o[1], o[2]], { icon: L.divIcon({ className: '', html: '<div class="pino">★</div>', iconSize: [24, 24], iconAnchor: [12, 12] }) }).addTo(map).bindPopup('<b>★ ' + o[0] + '</b><br>' + fmtD(km)); });
+    }
+    leg.innerHTML = h;
+  }
+  var q = d.stops.map(function(s){ return s[2] + ',' + s[1]; }).join(';');
+  fetch('https://router.project-osrm.org/route/v1/driving/' + q + '?overview=full&geometries=geojson')
+    .then(function(r){ return r.json(); })
+    .then(function(j){ if (j && j.routes && j.routes[0]){ draw(j.routes[0].geometry.coordinates.map(function(c){ return [c[1], c[0]]; })); } else { draw(straight); } })
+    .catch(function(){ draw(straight); });
+}
+document.querySelectorAll('.mapshow').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var day = btn.getAttribute('data-day');
+    var el = document.getElementById('map-' + day), leg = document.getElementById('leg-' + day);
+    var show = el.style.display !== 'block';
+    el.style.display = show ? 'block' : 'none'; leg.style.display = show ? 'block' : 'none';
+    if (show){ initDay(day); if (window['_m_' + day]){ setTimeout(function(){ window['_m_' + day].invalidateSize(); }, 80); } }
+  });
+});
 </script>
 </body>
 </html>
