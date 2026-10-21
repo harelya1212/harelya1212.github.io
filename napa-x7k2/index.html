@@ -109,7 +109,7 @@
       <div class="day-head"><h2>יום חמישי 22.10</h2><span class="dsub">הגעה</span></div>
       <div class="wx" id="wx0"><span class="ic">⏳</span><div><div class="tp">טוען תחזית…</div><div class="tip">אמריקן קניון</div></div></div>
       <a class="mapbtn" href="https://maps.apple.com/?dirflg=d&saddr=San+Francisco+International+Airport&daddr=3701+Main+Street,+American+Canyon,+CA">🗺️ מפת היום - כל המסלול: שדה התעופה ← מלון</a>
-      <button class="mapshow" data-day="thu">🗺️ הצג מפה עם הנקודות</button>
+      <button class="mapshow" data-day="thu">🗺️ הצג מפה עם האופציות - מרחק מהמסלול</button>
       <div class="dmap" id="map-thu" dir="ltr"></div>
       <div class="maplegend" id="leg-thu"></div>
 
@@ -131,6 +131,30 @@
       </div>
 
       <div class="drive">↓ נסיעה למלון: כ-1:15 (הערכה)</div>
+
+      <div class="card opt">
+        <div class="trow"><span class="time soft">אופציה</span><span class="name">🍔 In-N-Out Burger - מילבריי</span><span class="badge b-opt">על הדרך</span></div>
+        <div class="sub">הבורגר הקליפורני המפורסם - מהיר וזול, מיד אחרי הנחיתה</div>
+        <div class="addr">11 Rollins Rd, Millbrae, CA 94030</div>
+        <div class="notes">כ-5 דקות מהשדה, ממש בתחילת הדרך צפונה. פתוח חמישי עד 01:00 - בלי שום לחץ זמן. דירוג 4.5. תחליטו בדרך.</div>
+        <a class="navbtn" href="maps://?daddr=11%20Rollins%20Rd%2C%20Millbrae%2C%20CA%2094030">🧭 ניווט ל-In-N-Out</a>
+      </div>
+
+      <div class="card opt">
+        <div class="trow"><span class="time soft">אופציה</span><span class="name">🦞 Red Lobster - ואייחו</span><span class="badge b-opt">על הדרך</span></div>
+        <div class="sub">מסעדת פירות ים בישיבה - כ-15 דקות לפני המלון</div>
+        <div class="addr">1180 Admiral Callaghan Ln, Vallejo, CA 94591 · <a href="tel:+17076440167">(707) 644-0167</a></div>
+        <div class="notes">ממש ליד כביש 80 בוואייחו. פתוח חמישי עד 22:00, דירוג 4.0. אם הטיסה מתעכבת - לדלג. תחליטו בדרך.</div>
+        <a class="navbtn" href="maps://?daddr=1180%20Admiral%20Callaghan%20Ln%2C%20Vallejo%2C%20CA%2094591">🧭 ניווט ל-Red Lobster</a>
+      </div>
+
+      <div class="card opt">
+        <div class="trow"><span class="time soft">אופציה</span><span class="name">🥡 Panda Express - אמריקן קניון</span><span class="badge b-opt">על הדרך</span></div>
+        <div class="sub">סיני מהיר - 2 דקות מהמלון, פתוח הכי מאוחר בעיר</div>
+        <div class="addr">5075 Main St, American Canyon, CA · <a href="tel:+17076422655">(707) 642-2655</a></div>
+        <div class="notes">פתוח חמישי עד 21:30 (שאר מסעדות העיר נסגרות 21:00). גיבוי אם לא עצרתם קודם. תחליטו בדרך.</div>
+        <a class="navbtn" href="maps://?daddr=5075%20Main%20St%2C%20American%20Canyon%2C%20CA">🧭 ניווט לפנדה אקספרס</a>
+      </div>
 
       <div class="card">
         <div class="trow"><span class="time soft">ערב</span><span class="name">🏨 Home2 Suites American Canyon</span><span class="badge b-booked">BOOKED</span></div>
@@ -428,7 +452,7 @@ document.querySelectorAll('[data-copy]').forEach(function(btn){
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 var DAYS = {
-  thu: { stops: [["שדה התעופה SFO",37.62131,-122.37896],["מלון Home2 Suites",38.18041,-122.25351]], opts: [] },
+  thu: { stops: [["שדה התעופה SFO",37.62131,-122.37896],["מלון Home2 Suites",38.18041,-122.25351]], opts: [["In-N-Out Burger - מילבריי",37.60073,-122.38245],["Red Lobster - ואייחו",38.13519,-122.21504],["Panda Express - אמריקן קניון",38.18086,-122.25399]] },
   fri: { stops: [["מלון Home2 Suites",38.18041,-122.25351],["Domaine Carneros",38.24636,-122.35664],["Westwood Hills Park",38.30364,-122.32164],["Bistro Don Giovanni",38.34457,-122.32641],["מלון Home2 Suites",38.18041,-122.25351]], opts: [["di Rosa - אמנות וטבע",38.25815,-122.35308],["Oxbow Public Market",38.30152,-122.28159]] },
   sat: { stops: [["מלון Home2 Suites",38.18041,-122.25351],["Castello di Amorosa",38.55892,-122.54123],["Beringer",38.51017,-122.47991],["Bouchon Bakery",38.40241,-122.36179],["מלון Home2 Suites",38.18041,-122.25351],["Angèle",38.29664,-122.28326],["מלון Home2 Suites",38.18041,-122.25351]], opts: [["Oakville Grocery",38.43726,-122.40298]] },
   sun: { stops: [["מלון Home2 Suites",38.18041,-122.25351],["שדה התעופה SFO",37.62131,-122.37896]], opts: [["סאוסליטו",37.85686,-122.48011]] }
