@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>טיול נאפה - 22-25 באוקטובר 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "Segoe UI", Arial, sans-serif; background: #faf6ef; color: #2b2320; line-height: 1.5; }
+  .hero { background: linear-gradient(135deg, #5e2129, #722f37 55%, #96613f); color: #fff; padding: 34px 20px 26px; text-align: center; border-radius: 0 0 22px 22px; }
+  .hero h1 { font-size: 30px; margin-bottom: 4px; }
+  .hero .dates { font-size: 17px; opacity: .92; }
+  .hero .crew { margin-top: 8px; font-size: 14px; opacity: .85; }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 14px 12px 30px; }
+  .openbox { background: #fff4e0; border: 1.5px solid #e0a93e; border-radius: 12px; padding: 12px 14px; margin-bottom: 18px; font-size: 14px; }
+  .openbox b { color: #8a6414; }
+  .day { margin-bottom: 22px; }
+  .day-head { display: flex; align-items: baseline; gap: 8px; margin: 6px 2px 10px; }
+  .day-head h2 { font-size: 21px; color: #722f37; }
+  .day-head .dsub { font-size: 13px; color: #8a7a70; }
+  .wx { background: linear-gradient(120deg, #eef5fb, #fdf6e0); border: 1px solid #d9e4ee; border-radius: 12px; padding: 10px 14px; margin-bottom: 10px; display: flex; align-items: center; gap: 12px; font-size: 14px; }
+  .wx .ic { font-size: 30px; }
+  .wx .tp { font-weight: 700; font-size: 16px; }
+  .wx .tip { color: #5c5348; font-size: 13px; }
+  .card { background: #fff; border-radius: 14px; padding: 13px 14px; box-shadow: 0 1px 4px rgba(60,30,20,.10); margin-bottom: 10px; }
+  .card.opt { border: 1.5px dashed #d9a441; background: #fffdf6; }
+  .card.anniv { border: 2px solid #c9a227; background: linear-gradient(180deg, #fffdf4, #fff); }
+  .trow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .time { background: #722f37; color: #fff; font-size: 12.5px; font-weight: 700; border-radius: 7px; padding: 2px 8px; }
+  .time.soft { background: #a08b7d; }
+  .name { font-size: 17px; font-weight: 700; }
+  .badge { font-size: 11px; font-weight: 700; border-radius: 20px; padding: 2px 9px; }
+  .b-booked { background: #e2f2e4; color: #1e6b2a; border: 1px solid #9ed3a5; }
+  .b-open { background: #fdeeda; color: #96600f; border: 1px solid #efc078; }
+  .b-opt { background: #fdf3d8; color: #8a6414; border: 1px solid #e7cf8a; }
+  .b-anniv { background: #f7e08b; color: #6d5410; border: 1px solid #c9a227; }
+  .addr { color: #5c5348; font-size: 14px; margin-top: 3px; }
+  .addr a, .notes a { color: #722f37; }
+  .notes { font-size: 13.5px; color: #4c4239; margin-top: 5px; }
+  .conf { display: inline-flex; align-items: center; gap: 6px; background: #f4efe7; border: 1px solid #ddd2c2; border-radius: 8px; padding: 2px 4px 2px 8px; margin-top: 6px; font-size: 13px; }
+  .conf button { border: none; background: #722f37; color: #fff; font-size: 12px; border-radius: 6px; padding: 3px 9px; cursor: pointer; }
+  .drive { font-size: 12.5px; color: #8a7a70; text-align: center; margin: 2px 0 10px; }
+  .navbtn { display: block; text-align: center; background: #722f37; color: #fff; text-decoration: none; font-weight: 700; font-size: 15px; padding: 11px; border-radius: 10px; margin-top: 9px; }
+  .navbtn:active { background: #5e2129; }
+  footer { text-align: center; color: #a08b7d; font-size: 12.5px; padding: 8px 0 20px; }
+  /* PIN gate */
+  #gate { position: fixed; inset: 0; background: linear-gradient(160deg, #5e2129, #722f37 60%, #96613f); z-index: 50; display: flex; align-items: center; justify-content: center; padding: 20px; }
+  #gate .box { text-align: center; color: #fff; max-width: 340px; width: 100%; }
+  #gate .lock { font-size: 44px; margin-bottom: 6px; }
+  #gate h2 { font-size: 22px; margin-bottom: 4px; }
+  #gate p { opacity: .85; font-size: 14px; margin-bottom: 18px; }
+  #gate .pins { display: flex; gap: 10px; justify-content: center; direction: ltr; }
+  #gate input { width: 56px; height: 64px; font-size: 28px; text-align: center; border: none; border-radius: 12px; background: rgba(255,255,255,.95); color: #5e2129; font-weight: 700; }
+  #gate .err { color: #ffd9a8; min-height: 22px; margin-top: 12px; font-size: 14px; }
+  @keyframes shake { 0%,100%{transform:translateX(0)} 20%,60%{transform:translateX(-8px)} 40%,80%{transform:translateX(8px)} }
+  .shake { animation: shake .45s; }
+  #content { display: none; }
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="box">
+    <div class="lock">🔒</div>
+    <h2>טיול נאפה 🍷</h2>
+    <p>הכניסה עם קוד גישה בן 4 ספרות</p>
+    <div class="pins" id="pins">
+      <input type="tel" inputmode="numeric" maxlength="1" autocomplete="one-time-code">
+      <input type="tel" inputmode="numeric" maxlength="1">
+      <input type="tel" inputmode="numeric" maxlength="1">
+      <input type="tel" inputmode="numeric" maxlength="1">
+    </div>
+    <div class="err" id="gateErr"></div>
+  </div>
+</div>
+
+<div id="content">
+  <div class="hero">
+    <h1>טיול נאפה 🍷</h1>
+    <div class="dates">חמישי 22.10 - ראשון 25.10.2026</div>
+    <div class="crew">Assaf · Yamit · Ron · Avishai &nbsp;|&nbsp; שבת 24.10 - יום נישואין 💛</div>
+  </div>
+
+  <div class="wrap">
+    <div class="openbox">
+      <b>⚠️ שני דברים עדיין פתוחים:</b><br>
+      1. מלון: עדכון אורחים 2 ← 4 (אישור 81309217)<br>
+      2. The Charter Oak: שולחן לבראנץ' ראשון טרם הוזמן (יש זמינות ב-11:30)
+    </div>
+
+    <!-- ===== Thursday ===== -->
+    <div class="day">
+      <div class="day-head"><h2>יום חמישי 22.10</h2><span class="dsub">הגעה</span></div>
+      <div class="wx" id="wx0"><span class="ic">⏳</span><div><div class="tp">טוען תחזית…</div><div class="tip">אמריקן קניון</div></div></div>
+
+      <div class="card">
+        <div class="trow"><span class="time">17:35</span><span class="name">✈️ טיסה AA 2421</span><span class="badge b-booked">BOOKED</span></div>
+        <div class="notes">PHX ← SFO, נחיתה 19:39. מושבים: Assaf 11F, Yamit 11D.</div>
+        <span class="conf">הזמנה LORXMR <button data-copy="LORXMR">העתק</button></span>
+        <div class="notes">Ron ו-Avishai: אותה טיסה, מושבים 17C / 17D.</div>
+        <span class="conf">הזמנה LNOCEU <button data-copy="LNOCEU">העתק</button></span>
+      </div>
+
+      <div class="card">
+        <div class="trow"><span class="time">19:39</span><span class="name">🚗 איסוף רכב - Hertz</span><span class="badge b-booked">BOOKED</span></div>
+        <div class="addr">San Francisco International Airport</div>
+        <div class="notes">Camry Hybrid. החזרה ראשון 25.10 עד 18:00 (מחזירים 17:15).</div>
+        <span class="conf">הזמנה L734E794298 <button data-copy="L734E794298">העתק</button></span>
+        <div class="notes">שולם: $191.04</div>
+        <a class="navbtn" href="maps://?daddr=San%20Francisco%20International%20Airport">🧭 ניווט לאיסוף הרכב</a>
+      </div>
+
+      <div class="drive">↓ נסיעה למלון: כ-1:15 (הערכה)</div>
+
+      <div class="card">
+        <div class="trow"><span class="time soft">ערב</span><span class="name">🏨 Home2 Suites American Canyon</span><span class="badge b-booked">BOOKED</span></div>
+        <div class="addr">3701 Main Street, American Canyon, CA 94503</div>
+        <div class="notes">3 לילות. צ'ק-אין 15:00, צ'ק-אאוט 11:00. בריכה סגורה. כרגע 2 אורחים - צריך לעדכן ל-4.</div>
+        <span class="conf">אישור 81309217 <button data-copy="81309217">העתק</button></span>
+        <a class="navbtn" href="maps://?daddr=3701%20Main%20Street%2C%20American%20Canyon%2C%20CA%2094503">🧭 ניווט למלון</a>
+      </div>
+    </div>
+
+    <!-- ===== Friday ===== -->
+    <div class="day">
+      <div class="day-head"><h2>יום שישי 23.10</h2><span class="dsub">יקב, טיול, ארוחת ערב</span></div>
+      <div class="wx" id="wx1"><span class="ic">⏳</span><div><div class="tp">טוען תחזית…</div><div class="tip">נאפה</div></div></div>
+
+      <div class="card">
+        <div class="trow"><span class="time">12:00–13:30</span><span class="name">🍇 Domaine Carneros</span><span class="badge b-booked">BOOKED</span></div>
+        <div class="addr">1240 Duhig Road, Napa, CA 94559</div>
+        <div class="notes">טעימת יין (הוזמן על ידי הקבוצה). כניסה 21+ בלבד.</div>
+        <a class="navbtn" href="maps://?daddr=1240%20Duhig%20Road%2C%20Napa%2C%20CA%2094559">🧭 ניווט ליקב</a>
+      </div>
+
+      <div class="drive">↓ נסיעה לפארק: כ-35 דקות (הערכה)</div>
+
+      <div class="card">
+        <div class="trow"><span class="time">אחה"צ</span><span class="name">🌲 Bothe-Napa Valley State Park</span></div>
+        <div class="addr">3801 St. Helena Highway, Calistoga, CA 94515</div>
+        <div class="notes">טיול קל - Redwood Trail, כ-3 מייל הלוך-חזור, 1–1.5 שעות, מוצל. כניסה $10 לרכב. לשים לב לאלון ארסי בשולי השביל.</div>
+        <a class="navbtn" href="maps://?daddr=3801%20St.%20Helena%20Highway%2C%20Calistoga%2C%20CA%2094515">🧭 ניווט לפארק</a>
+      </div>
+
+      <div class="drive">↓ נסיעה למסעדה: כ-35 דקות (הערכה)</div>
+
+      <div class="card">
+        <div class="trow"><span class="time">20:00</span><span class="name">🍝 Bistro Don Giovanni</span><span class="badge b-booked">BOOKED</span></div>
+        <div class="addr">4110 Howard Lane, Napa, CA 94558 · <a href="tel:+17072243300">(707) 224-3300</a></div>
+        <div class="notes">ארוחת ערב, 4 אנשים, ללא כרטיס. שולחן לשעתיים, כל הקבוצה נוכחת, 15 דקות חסד. חנייה מוגבלת מאוד - להגיע יחד. קוד לבוש: Casual.</div>
+        <span class="conf">אישור 2110650363 <button data-copy="2110650363">העתק</button></span>
+        <a class="navbtn" href="maps://?daddr=4110%20Howard%20Lane%2C%20Napa%2C%20CA%2094558">🧭 ניווט למסעדה</a>
+      </div>
+    </div>
+
+    <!-- ===== Saturday ===== -->
+    <div class="day">
+      <div class="day-head"><h2>יום שבת 24.10</h2><span class="dsub">יום נישואין 💛</span></div>
+      <div class="wx" id="wx2"><span class="ic">⏳</span><div><div class="tp">טוען תחזית…</div><div class="tip">סנט הלנה</div></div></div>
+
+      <div class="drive">יוצאים מהמלון ב-9:55 ↓ נסיעה לטירה: כ-50 דקות</div>
+
+      <div class="card">
+        <div class="trow"><span class="time">10:50–12:50</span><span class="name">🏰 Castello di Amorosa</span><span class="badge b-booked">BOOKED</span></div>
+        <div class="addr">4045 St. Helena Highway, Calistoga, CA 94515 · <a href="tel:+17079676272">(707) 967-6272</a></div>
+        <div class="notes">סיור Diamond + טעימה, 4 אנשים. להגיע 15 דקות מוקדם, צ'ק-אין מעבר לגשר המתרומם. נעליים נוחות ושכבות (המרתפים קרים).</div>
+        <span class="conf">הזמנה 1230209 <button data-copy="1230209">העתק</button></span>
+        <div class="notes">שולם: $328.58</div>
+        <a class="navbtn" href="maps://?daddr=4045%20St.%20Helena%20Highway%2C%20Calistoga%2C%20CA%2094515">🧭 ניווט לטירה</a>
+      </div>
+
+      <div class="drive">↓ נסיעה: כ-15 דקות · כמעט אין זמן לצהריים - חטיף קל בדרך</div>
+
+      <div class="card">
+        <div class="trow"><span class="time">13:30–14:45</span><span class="name">🍷 Beringer Vineyards</span><span class="badge b-booked">BOOKED</span></div>
+        <div class="addr">2000 Main St, St. Helena, CA 94574 · <a href="tel:+17072575771">+1 707-257-5771</a></div>
+        <div class="notes">סיור Estate + טעימה, 4 אנשים. צ'ק-אין ב-Welcome Center בחניון הראשי, להגיע 15 דקות מוקדם. חובה תעודה מזהה עם תמונה (רישיון או דרכון - לא צילום).</div>
+        <span class="conf">אישור TOCK-R-UWPLULV9 <button data-copy="TOCK-R-UWPLULV9">העתק</button></span>
+        <div class="notes">שולם: $411.35</div>
+        <a class="navbtn" href="maps://?daddr=2000%20Main%20St%2C%20St.%20Helena%2C%20CA%2094574">🧭 ניווט לברינגר</a>
+      </div>
+
+      <div class="card opt">
+        <div class="trow"><span class="time soft">~15:00</span><span class="name">🥐 Bouchon Bakery</span><span class="badge b-opt">אופציונלי</span></div>
+        <div class="addr">6528 Washington St, Yountville, CA 94599 · <a href="tel:+17079442253">(707) 944-2253</a></div>
+        <div class="notes">עצירה בדרך חזרה למלון - מאפה או כריך קל לפני ארוחת הערב. פתוח שבת עד 18:00.</div>
+        <a class="navbtn" href="maps://?daddr=6528%20Washington%20St%2C%20Yountville%2C%20CA%2094599">🧭 ניווט למאפייה</a>
+      </div>
+
+      <div class="card">
+        <div class="trow"><span class="time soft">15:20–18:05</span><span class="name">🛋️ הפסקה במלון</span></div>
+        <div class="notes">מקלחת, התארגנות ומנוחה לפני ארוחת יום הנישואים. יוצאים ב-18:05.</div>
+        <a class="navbtn" href="maps://?daddr=3701%20Main%20Street%2C%20American%20Canyon%2C%20CA%2094503">🧭 ניווט למלון</a>
+      </div>
+
+      <div class="drive">↓ נסיעה למסעדה: כ-15 דקות</div>
+
+      <div class="card anniv">
+        <div class="trow"><span class="time">19:00</span><span class="name">💛 Angèle - ארוחת יום נישואין</span><span class="badge b-booked">BOOKED</span></div>
+        <div class="addr">540 Main St, Napa, CA 94559 · <a href="tel:+17072528115">+1 707-252-8115</a></div>
+        <div class="notes">ארוחת ערב, 4 אנשים, ללא כרטיס. כל הקבוצה חייבת להיות נוכחת, השולחן נשמר 15 דקות, ארוחת ערב מלאה בלבד. קוד לבוש: Business Casual.</div>
+        <span class="conf">אישור TOCK-R-EU5EHCPD <button data-copy="TOCK-R-EU5EHCPD">העתק</button></span>
+        <a class="navbtn" href="maps://?daddr=540%20Main%20St%2C%20Napa%2C%20CA%2094559">🧭 ניווט למסעדה</a>
+      </div>
+    </div>
+
+    <!-- ===== Sunday ===== -->
+    <div class="day">
+      <div class="day-head"><h2>יום ראשון 25.10</h2><span class="dsub">בראנץ' וחזרה</span></div>
+      <div class="wx" id="wx3"><span class="ic">⏳</span><div><div class="tp">טוען תחזית…</div><div class="tip">סנט הלנה</div></div></div>
+
+      <div class="card">
+        <div class="trow"><span class="time soft">עד 11:00</span><span class="name">🧳 צ'ק-אאוט מהמלון</span></div>
+        <div class="notes">ארוחת בוקר במלון, אורזים ויוצאים לכיוון סנט הלנה.</div>
+      </div>
+
+      <div class="card">
+        <div class="trow"><span class="time">~11:30</span><span class="name">🥞 The Charter Oak - בראנץ'</span><span class="badge b-open">טרם הוזמן</span></div>
+        <div class="addr">1050 Charter Oak Ave, St Helena, CA 94574 · <a href="tel:+17073026996">(707) 302-6996</a></div>
+        <div class="notes">בראנץ' מוגש 11:00–14:30, כ-$25 לאדם. שולחן טרם הוזמן - יש זמינות ב-11:30, להזמין ב-Resy.</div>
+        <a class="navbtn" href="maps://?daddr=1050%20Charter%20Oak%20Ave%2C%20St%20Helena%2C%20CA%2094574">🧭 ניווט למסעדה</a>
+      </div>
+
+      <div class="drive">↓ כ-15:00 יוצאים לשדה: נסיעה כ-1:15 (לבדוק תנועה)</div>
+
+      <div class="card">
+        <div class="trow"><span class="time">17:15</span><span class="name">🚗 החזרת הרכב - SFO</span><span class="badge b-booked">BOOKED</span></div>
+        <div class="addr">San Francisco International Airport</div>
+        <div class="notes">ההזמנה אומרת 18:00 - מחזירים מוקדם בגלל הטיסה.</div>
+        <a class="navbtn" href="maps://?daddr=San%20Francisco%20International%20Airport">🧭 ניווט לשדה התעופה</a>
+      </div>
+
+      <div class="card">
+        <div class="trow"><span class="time">19:11</span><span class="name">✈️ טיסה AA 1914</span><span class="badge b-booked">BOOKED</span></div>
+        <div class="notes">SFO ← PHX, נחיתה 21:17. מושבים: Assaf 9F, Yamit 9D (הזמנה LORXMR). Ron ו-Avishai בהזמנה LNOCEU.</div>
+      </div>
+    </div>
+
+    <footer>נאפה · 22–25 באוקטובר 2026 · קבוצת "אנחנו" 🍷</footer>
+  </div>
+</div>
+
+<script>
+// ===== PIN gate =====
+(function(){
+  var PIN = '1212';
+  var inputs = document.querySelectorAll('#pins input');
+  var err = document.getElementById('gateErr');
+  inputs[0].focus();
+  inputs.forEach(function(inp, i){
+    inp.addEventListener('input', function(){
+      inp.value = inp.value.replace(/\D/g,'').slice(0,1);
+      if (inp.value && i < 3) inputs[i+1].focus();
+      var code = Array.prototype.map.call(inputs, function(x){return x.value;}).join('');
+      if (code.length === 4) {
+        if (code === PIN) {
+          document.getElementById('gate').style.display = 'none';
+          document.getElementById('content').style.display = 'block';
+        } else {
+          err.textContent = 'קוד שגוי - נסו שוב';
+          document.getElementById('pins').classList.add('shake');
+          setTimeout(function(){
+            document.getElementById('pins').classList.remove('shake');
+            inputs.forEach(function(x){ x.value=''; });
+            inputs[0].focus();
+          }, 480);
+        }
+      }
+    });
+    inp.addEventListener('keydown', function(e){
+      if (e.key === 'Backspace' && !inp.value && i > 0) inputs[i-1].focus();
+    });
+  });
+})();
+
+// ===== Copy buttons =====
+document.querySelectorAll('[data-copy]').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var txt = btn.getAttribute('data-copy');
+    function done(){ var old = btn.textContent; btn.textContent = 'הועתק ✓'; setTimeout(function(){ btn.textContent = old; }, 1500); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(done).catch(function(){ fallback(); });
+    } else { fallback(); }
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = txt; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch(e){}
+      document.body.removeChild(ta); done();
+    }
+  });
+});
+
+// ===== Live weather (Open-Meteo, no key) =====
+(function(){
+  var url = 'https://api.open-meteo.com/v1/forecast?latitude=38.17,38.30,38.51,38.51&longitude=-122.25,-122.30,-122.47,-122.47&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode&temperature_unit=fahrenheit&timezone=America%2FLos_Angeles&start_date=2026-10-22&end_date=2026-10-25';
+  var places = ['אמריקן קניון', 'נאפה', 'סנט הלנה', 'סנט הלנה'];
+  function wmo(c){
+    if (c === 0) return ['☀️','בהיר'];
+    if (c === 1) return ['🌤️','בהיר ברובו'];
+    if (c === 2) return ['⛅','מעונן חלקית'];
+    if (c === 3) return ['☁️','מעונן'];
+    if (c === 45 || c === 48) return ['🌫️','ערפל'];
+    if (c >= 51 && c <= 57) return ['🌦️','טפטוף'];
+    if (c >= 61 && c <= 67) return ['🌧️','גשם'];
+    if ((c >= 71 && c <= 77) || c === 85 || c === 86) return ['❄️','שלג'];
+    if (c >= 80 && c <= 82) return ['🌦️','ממטרים'];
+    if (c >= 95) return ['⛈️','סופת רעמים'];
+    return ['🌡️',''];
+  }
+  function cOf(f){ return Math.round((f - 32) * 5 / 9); }
+  function tip(mn, mx, rain){
+    if (rain !== null && rain >= 50) return 'צפוי גשם - לקחת מטרייה ושכבה חמה';
+    if (mn <= 50) return 'בוקר וערב קרירים - שכבה נוספת, צהריים נעימים';
+    if (mx >= 82) return 'יום חם - בגדים קלילים ומים';
+    return 'מזג אוויר נעים - שכבה קלה לערב';
+  }
+  fetch(url).then(function(r){ return r.json(); }).then(function(data){
+    var list = Array.isArray(data) ? data : [data];
+    for (var i = 0; i < 4; i++) {
+      var el = document.getElementById('wx' + i);
+      if (!el || !list[i] || !list[i].daily) continue;
+      var d = list[i].daily;
+      var mx = Math.round(d.temperature_2m_max[i]);
+      var mn = Math.round(d.temperature_2m_min[i]);
+      var rain = (d.precipitation_probability_max && d.precipitation_probability_max[i] !== null) ? d.precipitation_probability_max[i] : null;
+      var w = wmo(d.weathercode[i]);
+      el.innerHTML = '<span class="ic">' + w[0] + '</span><div><div class="tp">' + w[1] + ' · ' + mx + '°F (' + cOf(mx) + '°) / ' + mn + '°F (' + cOf(mn) + '°)</div>' +
+        '<div class="tip">' + places[i] + (rain !== null ? ' · סיכוי גשם ' + rain + '%' : '') + ' · ' + tip(mn, mx, rain) + '</div></div>';
+    }
+  }).catch(function(){
+    for (var i = 0; i < 4; i++) {
+      var el = document.getElementById('wx' + i);
+      if (el) el.innerHTML = '<span class="ic">🌡️</span><div><div class="tp">התחזית לא נטענה</div><div class="tip"><a href="https://www.weather.gov/">לבדיקה ב-weather.gov</a></div></div>';
+    }
+  });
+})();
+</script>
+</body>
+</html>
