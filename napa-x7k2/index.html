@@ -93,7 +93,7 @@
     <h1>טיול נאפה 🍷</h1>
     <div class="dates">חמישי 22.10 - ראשון 25.10.2026</div>
     <div class="crew">Assaf · Yamit · Ron · Avishai &nbsp;|&nbsp; שבת 24.10 - יום נישואין 💛</div>
-    <div style="display:inline-block; background:rgba(255,255,255,.22); border:1px solid rgba(255,255,255,.5); padding:3px 12px; border-radius:999px; font-size:12.5px; font-weight:700; margin-top:10px;">✓ עודכן 20.10: מסלולים בנהיגה + מפות עם אופציות</div>
+    <div style="display:inline-block; background:rgba(255,255,255,.22); border:1px solid rgba(255,255,255,.5); padding:3px 12px; border-radius:999px; font-size:12.5px; font-weight:700; margin-top:10px;">✓ עודכן 24.10: יום ראשון - אוקלנד במקום סאוסליטו</div>
     <div id="cd"></div>
     <div class="daynav"><a href="#thu">חמישי</a><a href="#fri">שישי</a><a href="#sat">שבת</a><a href="#sun">ראשון</a></div>
   </div>
@@ -313,37 +313,65 @@
 
     <!-- ===== Sunday ===== -->
     <div class="day" id="sun">
-      <div class="day-head"><h2>יום ראשון 25.10</h2><span class="dsub">בראנץ' וחזרה</span></div>
+      <div class="day-head"><h2>יום ראשון 25.10</h2><span class="dsub">אוקלנד וחזרה</span></div>
       <div class="wx" id="wx3"><span class="ic">⏳</span><div><div class="tp">טוען תחזית…</div><div class="tip">סנט הלנה</div></div></div>
-      <a class="mapbtn" href="https://maps.apple.com/?dirflg=d&saddr=3701+Main+Street,+American+Canyon,+CA&daddr=San+Francisco+International+Airport">🗺️ מפת היום - כל המסלול: מלון ← שדה התעופה</a>
+      <a class="mapbtn" href="https://maps.apple.com/?dirflg=d&saddr=3701+Main+Street,+American+Canyon,+CA&daddr=Jack+London+Square,+Oakland,+CA+to:+San+Francisco+International+Airport">🗺️ מפת היום - כל המסלול: מלון ← אוקלנד ← שדה התעופה</a>
       <button class="mapshow" data-day="sun">🗺️ הצג מפה עם האופציות - מרחק מהמסלול</button>
       <div class="dmap" id="map-sun" dir="ltr"></div>
       <div class="maplegend" id="leg-sun"></div>
 
       <div class="card">
         <div class="trow"><span class="time soft">עד 11:00</span><span class="name">🧳 צ'ק-אאוט מהמלון</span></div>
-        <div class="notes">ארוחת בוקר במלון, אורזים ויוצאים לכיוון סנט הלנה.</div>
+        <div class="notes">ארוחת בוקר במלון, אורזים ויוצאים דרומה לאוקלנד.</div>
+      </div>
+
+      <div class="drive">↓ כ-55 דקות דרומה לאוקלנד (כביש 29 ואז I-80)</div>
+
+      <div class="card">
+        <div class="trow"><span class="time">12:00</span><span class="name">⚓ Jack London Square - שוק וטיילת</span></div>
+        <div class="addr">472 Water St, Oakland, CA 94607</div>
+        <div class="notes">שוק האיכרים של ראשון 11:00-16:00 על קו המים, ואחריו טיול על הטיילת ובקתת ג'ק לונדון. חניה בחניון הכיכר (כניסה מ-Clay St או Water St). כל המזוודות בתא המטען, שום דבר גלוי ברכב.</div>
+        <a class="navbtn" href="maps://?daddr=Jack%20London%20Square%2C%20Oakland%2C%20CA">🧭 ניווט לכיכר</a>
       </div>
 
       <div class="card">
-        <div class="trow"><span class="time soft">יום פנוי</span><span class="name">☕ בוקר רגוע ונסיעה דרומה</span></div>
-        <div class="notes">בלי נסיעות הלוך וחזור: ארוחת בוקר במלון, צ'ק-אאוט עד 11:00, ונסיעה נינוחה דרומה ל-SFO.</div>
+        <div class="trow"><span class="time">13:00</span><span class="name">🍽️ צהריים - Left Bank</span></div>
+        <div class="sub">מסעדה צרפתית עם פטיו על המים</div>
+        <div class="addr">Webster St &amp; Embarcadero W, Jack London Square, Oakland</div>
+        <div class="notes">פתוח בראשון 11:00-20:00. אלטרנטיבה קלילה: אוכל מהדוכנים בשוק עצמו.</div>
+        <a class="navbtn" href="maps://?daddr=Left%20Bank%2C%20Jack%20London%20Square%2C%20Oakland%2C%20CA">🧭 ניווט למסעדה</a>
       </div>
 
       <div class="card opt">
-        <div class="trow"><span class="time soft">אופציה</span><span class="name">⛵ סאוסליטו - צהריים על המים</span><span class="badge b-opt">על הדרך</span></div>
-        <div class="sub">עיירת חוף על המפרץ - מסעדות דגים ונוף לסן פרנסיסקו</div>
-        <div class="addr">Sausalito Ferry Landing, Sausalito, CA</div>
-        <div class="notes">על המסלול דרומה דרך כביש 101 וגשר הזהב (יציאה ממש לפני הגשר). חנייה יכולה להיות צפופה בראשון. תחליטו בדרך.</div>
-        <a class="navbtn" href="maps://?daddr=Sausalito%20Ferry%20Landing%2C%20Sausalito%2C%20CA">🧭 ניווט לסאוסליטו</a>
+        <div class="trow"><span class="time soft">אופציה</span><span class="name">★ USS Potomac - יאכטת הנשיא רוזוולט</span><span class="badge b-opt">בכיכר</span></div>
+        <div class="sub">"הבית הלבן הצף" - סיור מודרך על היאכטה הנשיאותית</div>
+        <div class="addr">540 Water St, Oakland, CA 94607</div>
+        <div class="notes">סיורים בראשון ב-12:30 וב-14:00, כשעה + סרטון קצר. $20 מבוגר, $10 נוער, עד גיל 9 חינם. ממש בכיכר - לא צריך להזיז את הרכב.</div>
+        <a class="navbtn" href="maps://?daddr=USS%20Potomac%2C%20540%20Water%20St%2C%20Oakland%2C%20CA">🧭 ניווט ליאכטה</a>
       </div>
 
-      <div class="drive">↓ יוצאים דרומה: כ-1:15 לשדה במסלול הישיר, או דרך 101 וסאוסליטו (לבדוק תנועה)</div>
+      <div class="card opt">
+        <div class="trow"><span class="time soft">אופציה</span><span class="name">★ OMCA - מוזיאון אוקלנד של קליפורניה</span><span class="badge b-opt">10 דקות</span></div>
+        <div class="sub">אמנות, היסטוריה וטבע של קליפורניה תחת קורת גג אחת</div>
+        <div class="addr">1000 Oak St, Oakland, CA 94607</div>
+        <div class="notes">פתוח בראשון 11:00-17:00. $25 מבוגר, $22 מעל גיל 65, $18 נוער/סטודנט, עד גיל 12 חינם. הגנים בחינם.</div>
+        <a class="navbtn" href="maps://?daddr=Oakland%20Museum%20of%20California%2C%201000%20Oak%20St%2C%20Oakland%2C%20CA">🧭 ניווט למוזיאון</a>
+      </div>
+
+      <div class="card opt">
+        <div class="trow"><span class="time soft">אופציה</span><span class="name">★ Lake Merritt - הליכה סביב האגם</span><span class="badge b-opt">10 דקות</span></div>
+        <div class="sub">אגם מלוח בלב העיר - טיילת, גנים וציפורים</div>
+        <div class="addr">Lake Merritt Boating Center, 600 Bellevue Ave, Oakland</div>
+        <div class="notes">היקף מלא 3.5 מייל - לא חייבים את כולו, קטע קצר ליד הגנים מספיק. חינם.</div>
+        <a class="navbtn" href="maps://?daddr=Lake%20Merritt%20Boating%20Center%2C%20Oakland%2C%20CA">🧭 ניווט לאגם</a>
+      </div>
+
+      <div class="drive">↓ יציאה 16:15: כ-45 דקות לשדה</div>
 
       <div class="card">
         <div class="trow"><span class="time">17:15</span><span class="name">🚗 החזרת הרכב - SFO</span><span class="badge b-booked">BOOKED</span></div>
         <div class="addr">San Francisco International Airport</div>
-        <div class="notes">ההזמנה אומרת 18:00 - מחזירים מוקדם בגלל הטיסה.</div>
+        <div class="notes">ההזמנה אומרת 18:00 - מחזירים מוקדם בגלל הטיסה. בלי תדלוק - ה-Fuel Purchase Option שולם מראש.</div>
         <a class="navbtn" href="maps://?daddr=San%20Francisco%20International%20Airport">🧭 ניווט לשדה התעופה</a>
       </div>
 
@@ -471,7 +499,7 @@ var DAYS = {
   thu: { stops: [["שדה התעופה SFO",37.62131,-122.37896],["מלון Home2 Suites",38.18041,-122.25351]], opts: [["In-N-Out Burger - מילבריי",37.60073,-122.38245],["Comal - ברקלי",37.87162,-122.26849],["Skates on the Bay - ברקלי",37.86366,-122.31802],["Red Lobster - ואייחו",38.13519,-122.21504],["Panda Express - אמריקן קניון",38.18086,-122.25399]] },
   fri: { stops: [["מלון Home2 Suites",38.18041,-122.25351],["Domaine Carneros",38.24636,-122.35664],["Westwood Hills Park",38.30364,-122.32164],["Bistro Don Giovanni",38.34457,-122.32641],["מלון Home2 Suites",38.18041,-122.25351]], opts: [["di Rosa - אמנות וטבע",38.25815,-122.35308],["Oxbow Public Market",38.30152,-122.28159]] },
   sat: { stops: [["מלון Home2 Suites",38.18041,-122.25351],["Castello di Amorosa",38.55892,-122.54123],["Beringer",38.51017,-122.47991],["Bouchon Bakery",38.40241,-122.36179],["מלון Home2 Suites",38.18041,-122.25351],["Angèle",38.29664,-122.28326],["מלון Home2 Suites",38.18041,-122.25351]], opts: [["Oakville Grocery",38.43726,-122.40298]] },
-  sun: { stops: [["מלון Home2 Suites",38.18041,-122.25351],["שדה התעופה SFO",37.62131,-122.37896]], opts: [["סאוסליטו",37.85686,-122.48011]] }
+  sun: { stops: [["מלון Home2 Suites",38.18041,-122.25351],["Jack London Square, אוקלנד",37.7945,-122.2770],["שדה התעופה SFO",37.62131,-122.37896]], opts: [["USS Potomac",37.79551,-122.27978],["מוזיאון OMCA",37.79891,-122.26341],["אגם Lake Merritt",37.80531,-122.25797]] }
 };
 var mapsDone = {};
 function segDist(p, a, b){ var kx = 111.32 * Math.cos(p[0] * Math.PI / 180), ky = 110.57; var px = p[1] * kx, py = p[0] * ky, ax = a[1] * kx, ay = a[0] * ky, bx = b[1] * kx, by = b[0] * ky; var dx = bx - ax, dy = by - ay; var L2 = dx * dx + dy * dy; var t = L2 ? ((px - ax) * dx + (py - ay) * dy) / L2 : 0; t = Math.max(0, Math.min(1, t)); var cx = ax + t * dx, cy = ay + t * dy; return Math.sqrt((px - cx) * (px - cx) + (py - cy) * (py - cy)); }
